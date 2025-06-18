@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle com a Mão</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/logo.png') }}">
+  </head>
+  <body>
+    <main class="container">
+      <section class="info">
+        <div class="header-row">
+          <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo HandMouse" class="logo-circular" />
+          <h2>HANDMOUSE</h2>
+          <span id="status-message">
+            <span id="status-led"></span>
+            <span id="status-text">Desativado</span>
+          </span>
+        </div>
+        <p>
+          Controle seu PC com movimentos da mão
+        </p>
+      </section>
+      <section class="actions">
+        <button class="button" id="start-button">Iniciar Controle</button>
+        <button class="button" id="stop-button">Parar Controle</button>
+      </section>
+      <section class="camera">
+        <!-- <h2>Visualização da Câmera</h2> -->
+        <img id="camera-feed" alt="Feed da câmera" />
+      </section>
+      <footer>
+        <a href="#" aria-label="Site acessível">Acessível</a> |
+        <a href="https://github.com/Glauco00/PROJETO-HANDMOUSE" target="_blank" rel="noopener">Documentação</a> |
+        <a href="https://www.python.org/" target="_blank">Desenvolvido em Python</a>
+      </footer>
+    </main>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

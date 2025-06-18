@@ -1,0 +1,209 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+    flex: 1;
+    width: 70%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Para alinhar h2 e status-message na mesma linha */
+  .header-row {
+    display: grid;
+    grid-template-columns: 48px 1fr 160px; /* ajuste o 160px conforme o tamanho do status */
+    align-items: center;
+    width: 100%;
+    min-height: 48px;
+    gap: 0;
+  }
+
+  .logo-circular {
+    width: auto;
+    height: 7vh;
+    border-radius: 50%;
+    justify-self: start;
+  }
+
+  .header-row h2 {
+    margin: 1vh;
+    margin-left: 12vh;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+    justify-self: center;
+  }
+
+  .info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .info p {
+    font-size: 1rem;
+    margin: 20px;
+    color: #ccc;
+  }
+  
+  #status-message {
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+    justify-self: end;
+  }
+
+  #status-led {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red; /* Cor inicial (desativado) */
+    transition: background-color 0.3s ease;
+  }
+
+  #status-text {
+    font-size: 1rem;
+    color: red; /* Cor inicial (desativado) */
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 15px;
+    color: #ffffff;
+    background: #2478d8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button:hover {
+    background-color: #ffffff;
+    transform: scale(1.03);
+  }
+  
+  .camera {
+    margin-top: 30px;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  /* .camera h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+   */
+  #camera-feed {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    /* border: 4px solid #2478d8; */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }  
+
+  footer {
+    margin-top: 20px; 
+    text-align: center;
+    padding: 15px;
+    background: #1f1f1f;
+    color: #aaa;
+    font-size: 0.95rem;
+    border-top: 1px solid #333;
+    letter-spacing: 0.5px;
+  }
+
+  footer a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+/* Responsividade para telas médias */
+@media (max-width: 700px) {
+  .header-row {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+    grid-template-columns: 36px 1fr 80px;
+    min-height: 36px;
+  }
+  .logo-circular {
+    width: 32px;
+    height: 32px;
+  }
+  .header-row h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    word-break: break-word;
+  }
+  #status-message {
+    min-width: 60px;
+    font-size: 0.95rem;
+    gap: 6px;
+  }
+}
+
+/* Responsividade para telas pequenas: status-message embaixo */
+@media (max-width: 480px) {
+  .header-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-height: unset;
+  }
+  .logo-circular {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 2px;
+  }
+  .header-row h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
+  #status-message {
+    min-width: unset;
+    font-size: 0.9rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2px;
+  }
+}
